@@ -1,7 +1,7 @@
 # README
 DeanLiddell  
 Friday, May 29, 2015  
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 
 ## Data Source
 
@@ -16,7 +16,7 @@ and the [National Oceanographic Data Center][03], which includes the
 [National Coastal Data Development Center][04] – have merged into the National Centers 
 for Environmental Information (NCEI).
 
-<center>![NOAA National Centers for Environmental Information](noaa-ncei.jpg)</center>
+<center>![NOAA National Centers for Environmental Information](images/noaa-ncei.jpg)</center>
 
 "...(NCEI) is responsible for preserving, monitoring, assessing, and providing 
 public access to the Nation's treasure of climate and historical weather 

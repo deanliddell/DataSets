@@ -1,0 +1,47 @@
+body
+    {
+        font-family: sans-serif;
+        letter-spacing: 0.1em;
+        color: black;
+    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    {
+        padding-bottom: 0.5em;
+    }
+h1.title
+    {
+        text-align: center;
+        border: thin solid lightgray;
+        line-height: 125%;
+        padding: 1.0em;
+        margin: 1.0em 0;
+    }
+h2
+    {
+        border-bottom: thin solid black;
+    }
+h3
+    {
+        color: gray;
+        border-bottom: thin solid gray;
+    }
+h5
+    {
+        color: darkblue;
+        text-decoration: underline;
+    }
+#TOC li a
+    {
+        color: #006400; /* dark green */
+    }
+h4.author,
+h4.date
+    {
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
