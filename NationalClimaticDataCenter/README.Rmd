@@ -67,7 +67,7 @@ depending on the event type.
 
 The various files that comprise the Storm Events Database are available from
 NOAA via HTTP or FTP. For the later, the top of the folder tree for storm
-events starts [here][09]. If you are using Windows® then it would be best to
+events starts [here][08]. If you are using Windows® then it would be best to
 open the FTP site in your Windows Explorer rather than use your browser. If you 
 happen to be using Mozilla, then an add-in like DownThemAll! is likely the most 
 useful tool for pulling data to your machine since the application supports 
