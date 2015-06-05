@@ -1,0 +1,17 @@
+"abbreviation","compass.point","azimuth"
+"N","North",0
+"NNE","North Northeast",22.5
+"NE","Northeast",45
+"ENE","East Northeast",67.5
+"E","East",90
+"ESE","East Southeast",112.5
+"SE","Southeast",135
+"SSE","South Southeast",157.5
+"S","South",180
+"SSW","South Southwest",202.5
+"SW","Southwest",225
+"WSW","West Southwest",247.5
+"W","West",270
+"WNW","West Northwest",292.5
+"NW","Northwest",315
+"NNW","North Northwest",337.5
