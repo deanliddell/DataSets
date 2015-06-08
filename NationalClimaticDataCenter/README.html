@@ -109,7 +109,7 @@ df &lt;- read.csv(bzfile(&quot;StormData.csv.bz2&quot;), header = TRUE, stringsA
 kv &lt;- read.csv(&quot;StormDataEventTable.csv&quot;, header = TRUE, stringsAsFactors = FALSE)
 
 # Rename the columns in 'df' to be more informative and easier to reference.
-names(df) &lt;- c(&quot;state.fips&quot;, &quot;b.date&quot;, &quot;b.time&quot;, &quot;b.tz&quot;, &quot;county.fips&quot;, &quot;county.name&quot;, 
+names(df) &lt;- c(&quot;state.fips&quot;, &quot;b.date&quot;, &quot;b.time&quot;, &quot;b.tz&quot;, &quot;b.county.fips&quot;, &quot;b.county.name&quot;, 
     &quot;state.usps&quot;, &quot;event.type&quot;, &quot;b.range&quot;, &quot;b.azimuth&quot;, &quot;b.location&quot;, &quot;e.date&quot;, 
     &quot;e.time&quot;, &quot;e.county.fips&quot;, &quot;e.county.name&quot;, &quot;e.range&quot;, &quot;e.azimuth&quot;, &quot;e.location&quot;, 
     &quot;length&quot;, &quot;width&quot;, &quot;force&quot;, &quot;magnitude&quot;, &quot;fatalities&quot;, &quot;injuries&quot;, &quot;property.damage&quot;, 

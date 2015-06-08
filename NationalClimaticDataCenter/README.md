@@ -59,11 +59,12 @@ depending on the event type.
 
 The various files that comprise the Storm Events Database are available from
 NOAA via HTTP or FTP. For the later, the top of the folder tree for storm
-events starts [here][08]. If you are using Windows® then it would be best to
-open the FTP site in your Windows Explorer rather than use your browser. If you 
-happen to be using Mozilla, then an add-in like DownThemAll! is likely the most 
-useful tool for pulling data to your machine since the application supports 
-multiple concurrent streams, in this case only limited by NOAA server policies.
+events starts [here](ftp://ftp.ncdc.noaa.gov/pub/data/swdi/stormevents/). If you 
+are using Windows® then it would be best to open the FTP site in your Windows 
+Explorer rather than use your browser. If you happen to be using Mozilla, then 
+an add-in like DownThemAll! is likely the most useful tool for pulling data to 
+your machine since the application supports multiple concurrent streams, in this 
+case only limited by NOAA server policies.
 
 Overall, the Storm Events Database (either presented in separate per-year files
 for each reporting type, or in a comprehesive Microsoft® Access database, which
@@ -93,7 +94,7 @@ df <- read.csv(bzfile("StormData.csv.bz2"), header = TRUE, stringsAsFactors = FA
 kv <- read.csv("StormDataEventTable.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Rename the columns in 'df' to be more informative and easier to reference.
-names(df) <- c("state.fips", "b.date", "b.time", "b.tz", "county.fips", "county.name", 
+names(df) <- c("state.fips", "b.date", "b.time", "b.tz", "b.county.fips", "b.county.name", 
     "state.usps", "event.type", "b.range", "b.azimuth", "b.location", "e.date", 
     "e.time", "e.county.fips", "e.county.name", "e.range", "e.azimuth", "e.location", 
     "length", "width", "force", "magnitude", "fatalities", "injuries", "property.damage", 
