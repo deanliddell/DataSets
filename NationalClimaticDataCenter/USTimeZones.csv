@@ -1,0 +1,72 @@
+"abbreviation","zone.name","utc.offset"
+"ADT","Atlantic Daylight Time",-3
+"AKDT","Alaska Daylight Time",-8
+"AKS","Alaska Standard Time (Depricated)",-9
+"AKST","Alaska Standard Time",-9
+"AST","Atlantic Standard Time",-4
+"CDT","Central Daylight Time",-5
+"CHADT","Chatham Island Daylight Time",13.75
+"CHAST","Chatham Island Standard Time",12.75
+"CHST","Chamorro Standard Time",10
+"CHUT","Chuuk Time",10
+"CKT","Cook Island Time",-10
+"CST","Central Standard Time",-6
+"CXT","Christmas Island Time",7
+"EASST","Eastern Island Summer Time",-5
+"EAST","Eastern Island Standard Time",-6
+"EDT","Eastern Daylight Time",-4
+"EGST","Eastern Greenland Summer Time",0
+"EGT","Eastern Greenland Time",-1
+"EST","Eastern Standard Time",-5
+"FJST","Fiji Summer Time",13
+"FJT","Fiji Time",12
+"GALT","Galapagos Time",-6
+"GAMT","Gambier Time",-9
+"GET","Georgia Standard Time",4
+"GILT","Gilbert Island Time",12
+"HADT","Hawaii-Aleutian Daylight Time",-9
+"HAST","Hawaii-Aleutian Standard Time",-10
+"HAST","Hawaii-Aleutian Standard Time",-10
+"HST","Hawaii Standard Time (Depricated)",-10
+"KOST","Kosrae Time (Micronesia)",11
+"LHDT","Lord Howe Daylight Time",11
+"LHST","Lord Howe Standard Time",10.5
+"LINT","Line Islands Time",14
+"MART","Marquesas Time",9.5
+"MDT","Mountain Daylight Time",-6
+"MDT","Mountain Daylight Time",-6
+"MEST","Metlakatla (Alaska Indian Community)",-8
+"MHT","Marshall Islands Time",12
+"MST","Mountain Standard Time",-7
+"NCT","New Caledonia Time",11
+"NDT","Newfoundland Daylight Time",-2.5
+"NFT","Norfolk Time",11.5
+"NRT","Nauru Time",12
+"NST","Newfoundland Standard Time",-3.5
+"NUT","Niue Time",-11
+"NZDT","New Zealand Daylight Time",13
+"NZST","New Zealand Standard Time",12
+"PDT","Pacific Daylight Time (North America)",-7
+"PGT","Papua New Guinea Time",10
+"PHOT","Phoenix Island Time",13
+"PMDT","Pierre & Miquelon Daylight Time",-2
+"PMST","Pierre & Miquelon Standard Time",-3
+"PONT","Ponape Time (Micronesia)",11
+"PST","Pacific Standard Time (North America)",-8
+"PWT","Palau Time",9
+"SBT","Solomon Islands Time",11
+"SDT","Samoa Daylight Time",-10
+"SST","Samoa Standard Time (American Samoa)",-11
+"TAHT","Tahiti Time",-10
+"TFT","French Southern And Antarctic Territories Time",5
+"TKT","Tokelau Time",13
+"TOT","Tonga Time",13
+"TRUT","Truk Time (Micronesia)",10
+"TVT","Tuvalu Time",12
+"VUT","Vanuatu Time",11
+"WAKT","Wake Island Time (Northern Pacific Ocean)",12
+"WFT","Wallis And Futuna Time",12
+"WGST","Western Greenland Summer Time",-2
+"WGT","Western Greenland Time",-3
+"WST","Western Samoa Time (Standard Time)",13
+"YAP","Yap Time (Micronesia)",10
