@@ -119,34 +119,31 @@ the database (beginning January 1996) incorporated all severe weather events.
 There is also the matter of realignment in reporting – such as adding and 
 removing geographic and maritime regions and zones, renaming and/or redesignating
 such areas, adding and removing National Weather Service field and state offices
-and weather reporting authorities. Much of these inconsistenties can be 
-tolerated if the Storm Events Database were examined in very small time frames 
-for limited geographic areas, but reporting on the database in the aggregate 
-we need to smooth out these consistenties by substitution – that is, use a 
-concordance and/or lookup table to transform data entries into consistent and
-understandable terms. For example, one of the most egregious data reporting
-practices was the use of the "begin county name" field to annotate a storm track
-that covered multiple counties within a state. The "begin county fips" field
-would be encoded "000" (which doesn't exist) and the "begin county name" field
-would contain entries like: _WYZ001>006 - 008>015 - 017 - 022>025 - 050>070_ 
-which is a Winter Storm reported on November 21, 1995 in the state of Wyoming
-which started in county "001", moved into and covered counties "006, 008",
-then moved into and covered counties "015, 017, 022", then moved into and
-covered counties "025, 050", then finally ended in county "070", though the
-record does not report if this storm moved into adjoining states. When the rest
-of this record is closely examined one sees that it contains 
-_no other information_ which makes it next to useless. Even worse, the 
-information given in this example is simply wrong. There are twenty-three
-counties in Wyoming with non-contiguous assigned FIPS encoded numbers. There
-are no counties encoded 006, 008, 022, 050, or 070, so more than 66% of the
-data entered into this field is false and misleading. The only way to recover
-this field using a concordance or lookup table is to take the first valid FIPS
-code, properly encode the "begin county fips" field, and properly annotate the
-"begin county name" field with the corresponding county name. The storm track
-and the area covered can be derived from the respective "begin" and "end" 
-fields for length, width, azimuth, latitude, and longitude, and could be used in 
-a calculation of affected counties or visually represented by a storm plotting
-system.
+and weather reporting authorities. Much of these inconsistenties can be tolerated 
+if the Storm Events Database were examined in very small time frames for limited 
+geographic areas, but to report on the database in the aggregate we need to smooth 
+out these inconsistenties by substitution – that is, use a concordance and/or lookup 
+table to transform data entries into consistent and understandable terms. For 
+example, one of the most egregious data reporting practices was the use of the 
+"begin county name" field to annotate a storm track that covered multiple counties 
+within a state. The "begin county fips" field would be encoded with something other 
+than the actual county fips designation (often "000" or a "Public Forecast Zone" 
+designator) and the "begin county name" field would contain entries like: 
+_WYZ001>006 - 008>015 - 017 - 022>025 - 050>070_ (which is a series of "Public 
+Forecast Zone" designations, typically for a particular "Weather Forecast Office") 
+which, in this example, reported a winter storm on November 21, 1995 in the state 
+of Wyoming which started in "zone" 001, moved into and occupied "zones" 001 through 
+006, 008 through 015, 017, 022 through 025, and 050 through 070. To determine what 
+counties were involved requires the use of a concordance table to align the two 
+reporting systems. This field can also contain county names, organized in the same 
+fashion. It can also indicate storm events that span multiple time zones. Much of 
+the sorting out of this plethoria of information can be done with the positioning 
+coordinates (latitude and longitude) in the concordance tables that give the centroid 
+of the zones and sometimes the centroid of the storm system. Together with size 
+information (storm tract length, width, and direction) we could calculate the 
+counties involved, the storm track, or visualize the resulting information on a 
+map. Would could also discover key geographic details, such as the location or 
+proximity of urban, industrial, and agricultural areas.
 
 ##### StormEventConcordance
 
