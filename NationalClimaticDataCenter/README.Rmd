@@ -80,9 +80,77 @@ methods during each time-span (above) as opposed to updating the entire data set
 with the "Event Types" defined in Directive 10-1605. Considering the usefulness
 of this later approach led to the creation of a "concordance" table.
 
-##### StormDataEventTable
+### Concordance Tables
 
-The file "StormDataEventTable.csv" is a concordance table comprised of the 883
+Concordance tables provide the means to establish a relationship between two or
+more classification systems. In the case of the _Storm Events Database_ we are
+dealing mostly with the failure to adhere to standardized classifications (by 
+its sheer historical span), particularly in light of recent NOAA directives 
+(such as 10-1605) that have (as of 2007) established reporting practices 
+consistent with Federally mandated standards. Some of the relationships we want 
+to establish are proper naming and formatting conventions for states (and state 
+equivalents), counties (and county equivalents), placenames, and geologic and 
+geographic positioning. (Many of these are set by the U.S. Department of
+Interior, U.S. Geologic Survey, and the U.S. Board on Geographic Names)
+
+For economic reporting we also want to derive information from this database 
+that is relevant, and that means expressing all its measures in current terms.
+Historical perspectives are interesting (good, informed decisions are often 
+based on analyses of historic and present conditions), but if our analysis were 
+to be used as a planning tool then we need to express the impact of severe 
+weather in current and prospective future terms. For this we will use a number 
+of conversion factors to scale the information contained in the 
+_Storms Event Database_. For example, the Federal Reserve System 
+(_Federal Reserve Economic Data – FRED_) maintains over 11,000 relevant 
+time-series datasets, one of which is the Consumer-Price-Index for Urban 
+Consumers over all categories of costs (this information being derived from the 
+original source: Bureau of Economic Analysis of the U.S. Department of Commerce). 
+Since the data in available on-line we can easily incorporate it into our 
+analysis with the _quantmod_ package that is typlically included in the base _R_ 
+distribution.
+
+Most of the concordance tables we will propose will deal mostly with the forty-
+eight (48) contiguous states. Alaska, Hawaii, and U.S. territories and minor
+outlying islands will be clusted under a single category in some instances. This
+will have the effect of aligning recent reporting with historical reports which
+had a very narrow focus between the periods January 1950 to January 1996, before
+the database (beginning January 1996) incorporated all severe weather events.
+
+There is also the matter of realignment in reporting – such as adding and 
+removing geographic and maritime regions and zones, renaming and/or redesignating
+such areas, adding and removing National Weather Service field and state offices
+and weather reporting authorities. Much of these inconsistenties can be 
+tolerated if the Storm Events Database were examined in very small time frames 
+for limited geographic areas, but reporting on the database in the aggregate 
+we need to smooth out these consistenties by substitution – that is, use a 
+concordance and/or lookup table to transform data entries into consistent and
+understandable terms. For example, one of the most egregious data reporting
+practices was the use of the "begin county name" field to annotate a storm track
+that covered multiple counties within a state. The "begin county fips" field
+would be encoded "000" (which doesn't exist) and the "begin county name" field
+would contain entries like: _WYZ001>006 - 008>015 - 017 - 022>025 - 050>070_ 
+which is a Winter Storm reported on November 21, 1995 in the state of Wyoming
+which started in county "001", moved into and covered counties "006, 008",
+then moved into and covered counties "015, 017, 022", then moved into and
+covered counties "025, 050", then finally ended in county "070", though the
+record does not report if this storm moved into adjoining states. When the rest
+of this record is closely examined one sees that it contains 
+_no other information_ which makes it next to useless. Even worse, the 
+information given in this example is simply wrong. There are twenty-three
+counties in Wyoming with non-contiguous assigned FIPS encoded numbers. There
+are no counties encoded 006, 008, 022, 050, or 070, so more than 66% of the
+data entered into this field is false and misleading. The only way to recover
+this field using a concordance or lookup table is to take the first valid FIPS
+code, properly encode the "begin county fips" field, and properly annotate the
+"begin county name" field with the corresponding county name. The storm track
+and the area covered can be derived from the respective "begin" and "end" 
+fields for length, width, azimuth, latitude, and longitude, and could be used in 
+a calculation of affected counties or visually represented by a storm plotting
+system.
+
+##### StormEventConcordance
+
+The file "StormEventConcordance.csv" is a concordance table comprised of the 883
 distinct (unique) event descriptors (derived from scrubbing names to remove
 leading, trailing, and embedded spaces, as well as commas and periods – which is
 significantly less than the 985 you will discover by using the 'unique' function
@@ -101,7 +169,7 @@ df <- read.csv(bzfile("StormData.csv.bz2"),
 
 # Load the downloaded concordance table into an R data.frame named "kv".
 #
-kv <- read.csv("StormDataEventTable.csv",
+kv <- read.csv("StormEventConcordance.csv",
                header = TRUE, 
                stringsAsFactors = FALSE)
 
@@ -170,7 +238,7 @@ The only time consuming operation is loading the first data set. Each subsequent
 operation takes just moments. Here are some sample times:
 
 ```{r eval=FALSE, tidy=TRUE}
-> system.time(kv <- read.csv("StormDataEventTable.csv", header = TRUE, stringsAsFactors = FALSE))
+> system.time(kv <- read.csv("StormEventConcordance.csv", header = TRUE, stringsAsFactors = FALSE))
   user  system  elapsed  
   0.02    0.00     0.01  
 
@@ -191,6 +259,33 @@ As you can see, for 902,297 records it takes less than two(2) seconds to scrub
 the event type descriptors and to replace them with the concordance of 48
 updated event type descriptors. This two(2) seconds of processing time will be
 invaluable to performing a clear, logical, and convincing data analysis.
+
+### Analytical Groupings
+
+Much of the interesting and useful information that can be derived from the
+_Storm Events Database_ fall within the areas: population densities, economic
+activity, and climatic conditions, to name just a few. A number of Federal
+agenciens, including the National Weather Service (NOAA) have developed regional
+models that examine these attributes. NOAA's perspective on modeling include
+this outlook:
+
+<cite>"Regional modeling allow us to make more precise forecasts in both time and space 
+for critical human activities and concerns such as travel, health, work, and 
+safety. Imagine air travel where the crew has no idea of what hazards lay ahead; 
+an urban environment where no one knows where an airborne toxic hazard is headed; 
+a wildfire where the firefighting crews have no idea which way the wind is blowing 
+or where the fire will move; and severe weather where a community has no warning 
+of an impending tornado, hail storm, or flash flood. These are some of the reasons 
+why Regional Modeling is important to society. As these models through research 
+and development, become more skilled at higher and higher resolution and gain the 
+capability of replicating increasingly complex weather phenomena, the public, 
+through the predictions of the National Weather Service, will be better served 
+through more precise weather predictions for places and times where you are."</cite>
+
+
+
+
+
 
 
 [01]:http://www.ncdc.noaa.gov/
